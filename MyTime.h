@@ -29,6 +29,8 @@ class MyTime
 
     bool operator < (const MyTime& t1);
 
+    bool operator > (const MyTime& t1);
+
     bool operator <= (const MyTime& t1);
 
     void input(istream& ins);            
@@ -45,5 +47,5 @@ class MyTime
       int minutes;   // 0 <= minutes <= 59
  };
    
-  ostream& operator <<(ostream& outs, const MyTime& t1);
-  istream& operator >>(istream& ins, const MyTime& t1);
+  ostream& operator<<(ostream& outs, const MyTime& t1);
+  istream& operator>>(istream& ins, MyTime& t1);

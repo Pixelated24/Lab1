@@ -77,13 +77,19 @@ void MyTime::input(istream& ins){
 	simplify();
 }
 
+bool MyTime::operator > (const MyTime& t1){
+	int min1, min2;
+	min1 = hours * 60 + minutes;
+	min2 = t1.hours * 60 + t1.minutes;
+	return (min1 > min2);
+}
 
-ostream& operator <<(ostream& outs, const MyTime& t1) { 
+ostream& operator<<(ostream& outs, const MyTime& t1) { 
 	t1.output(outs);
 	return outs;
 }
 
-//istream& operator >> (istream& ins){
-//	t1.input(ins);
-//	return ins;
-//}
+istream& operator>>(istream& ins, MyTime& t1){
+	t1.input(ins);
+	return ins;
+}
